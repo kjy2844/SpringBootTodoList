@@ -12,10 +12,10 @@ public class TodoServiceTest {
 //    @InlineData(1)
 //    @InlineData(2)
 //    @InlineData(100)
-    void findAll(int count)
+    void findAll()
     {
-        TodoRepo repo = new FixedTodoRepo(count);
+        TodoRepo repo = new FixedTodoRepo(3);
         TodoServiceImpl service = new TodoServiceImpl(repo);
-        assert(service.findAll().size() == count);
+        assert(service.findAll().size() == 3);
     }
 }
